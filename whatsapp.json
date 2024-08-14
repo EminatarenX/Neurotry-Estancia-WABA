@@ -1,0 +1,32 @@
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "390984004090404",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "5219611114795",
+              "phone_number_id": "376517192207818"
+            },
+            "contacts": [
+              { "profile": { "name": "Emi Nataren" }, "wa_id": "5219614497858" }
+            ],
+            "messages": [
+              {
+                "from": "5219614497858",
+                "id": "wamid.HBgNNTIxOTYxNDQ5Nzg1OBUCABIYFDNBNUM0MTIzOTVDMzY5NzNDMjY4AA==",
+                "timestamp": "1723605777",
+                "text": { "body": "l" },
+                "type": "text"
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
