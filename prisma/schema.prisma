@@ -9,16 +9,23 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-model Message {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId  
-  messageId  String   @unique
-  timestamp  Int
-  type       String
-  content    Json    
 
-  @@map("messages")
+model Message {
+  id      String @id @default(uuid())
+  role        String
+  text        String  @db.Text
+  createdAt   DateTime @default(now())
+  conversationId String
+  conversation Conversation @relation(fields: [conversationId], references: [id])
+}
+
+model Conversation {
+  id      String @id @default(uuid())
+  wappId String @unique
+  messages  Message[]
+  createdAt DateTime  @default(now())
 }
