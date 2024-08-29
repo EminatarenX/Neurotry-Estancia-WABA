@@ -12,12 +12,16 @@ export class OpenAiService {
     });
   }
 
-  async generateText(messages: Array<ChatCompletionMessageParam>): Promise<string> {
+  async generateText(
+    messages: Array<ChatCompletionMessageParam>,
+    model: string = 'gpt-3.5-turbo',
+  ): Promise<string> {
     const completion = await this.openai.chat.completions.create({
       messages,
-      model: 'gpt-4o-mini',
+      model: model,
     });
 
+    
     return completion.choices[0].message.content;
   }
 }

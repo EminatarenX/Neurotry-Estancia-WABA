@@ -1,4 +1,4 @@
-export interface Message {
+export interface MessageStatus {
     object: string;
     entry:  Entry[];
 }
@@ -16,32 +16,34 @@ export interface Change {
 export interface Value {
     messaging_product: string;
     metadata:          Metadata;
-    contacts:          Contact[];
-    messages:          Message[];
-}
-
-export interface Contact {
-    profile: Profile;
-    wa_id:   string;
-}
-
-export interface Profile {
-    name: string;
-}
-
-export interface Message {
-    from:      string;
-    id:        string;
-    timestamp: string;
-    text:      Text;
-    type:      string;
-}
-
-export interface Text {
-    body: string;
+    statuses:          Status[];
 }
 
 export interface Metadata {
     display_phone_number: string;
     phone_number_id:      string;
+}
+
+export interface Status {
+    id:           string;
+    status:       string;
+    timestamp:    string;
+    recipient_id: string;
+    conversation: Conversation;
+    pricing:      Pricing;
+}
+
+export interface Conversation {
+    id:     string;
+    origin: Origin;
+}
+
+export interface Origin {
+    type: string;
+}
+
+export interface Pricing {
+    billable:      boolean;
+    pricing_model: string;
+    category:      string;
 }

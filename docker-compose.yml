@@ -1,12 +1,12 @@
 services: 
   db: 
-    platform: linux/x86_64
-    image: mysql:5.7
-    container_name: mysql_db
+    image: mongo
+    container_name: mongo_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     ports: 
-      - "3306:3306"
+      - "27017:27017"
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./mongodb:/data/db
