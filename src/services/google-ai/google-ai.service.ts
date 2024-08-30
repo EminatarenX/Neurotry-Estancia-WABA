@@ -251,7 +251,7 @@ Aquí está el mensaje que quiero que analices: "${messageToEvaluate}"`;
     }
   }
 
-  async generateFeedbackMessage (feedback: string, client: string) {
+  async generateFeedbackMessage(feedback: string, client: string) {
     const prompt = `Voy a darte un mensaje de feedback del cliente y quiero que me devuelvas **unicamente la respuesta que podriamos darle al cliente**.
     Aqui esta el mensaje de feedback: "${feedback}"
     
@@ -269,7 +269,5 @@ Aquí está el mensaje que quiero que analices: "${messageToEvaluate}"`;
     } catch (error) {
       console.log(error);
     }
-    
   }
 }
- 

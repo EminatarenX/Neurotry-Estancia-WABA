@@ -13,7 +13,6 @@ interface EnvVars {
 }
 
 const envsScheme = joi.object({
-    APP_SECRET: joi.string().required(),
     FACEBOOK_PRIVATE_KEY: joi.string().required(),
     SECRET_WPP_TOKEN: joi.string().required(),
     FACEBOOK_API_URL: joi.string().required(),
